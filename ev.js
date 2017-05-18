@@ -1,7 +1,7 @@
 'use strict';
 
-function func(){
+function myFunc(){
   console.log('Hello');
 }
 
-setInterval(func, 1000);
+setInterval(myFunc, 1000);
