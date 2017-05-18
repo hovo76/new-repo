@@ -1,7 +1,13 @@
 'use strict';
 
+let count = 1;
+
 function myFunc(){
-  console.log('Hello');
+  if(count == 7){
+    clearInterval(interval);
+  }else{
+    console.log(`${count++}`);
+  }
 }
 
-setInterval(myFunc, 1000);
+var interval = setInterval(myFunc, 1000);
