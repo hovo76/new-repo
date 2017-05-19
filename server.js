@@ -1,7 +1,7 @@
 'use strict';
 
 const http = require('http');
-const ports = require('./ports');
+const {upper,low, show} = require('./ports');
 
 const server = http.createServer((req,res) => {
   if(req.url === '/'){
@@ -9,12 +9,17 @@ const server = http.createServer((req,res) => {
     res.end(`
       <!doctype html>
       <body>
-        <h1>${ports.upper(__dirname)}</h1>
-        <p>dsfjs sdgj</p>
+        <h1>${upper(__dirname)}</h1>
+        <h3>${low('TEXT which is written in h3 tag')}</h3>
+        <p>${show('*')}</p>
       </body>
       `)
   }else{
     res.end('UNKNOWN')
   }
 })
+
+server.on('connection', socket => {
+  console.log("someone connected", socket);
+});
 server.listen(8080, () => console.log('Started'));

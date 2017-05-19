@@ -6,6 +6,26 @@ const upper = (str) => {
 
 }
 
+const lower = (str) => {
+
+  return str.toLowerCase();
+
+}
+
+const show = (str) => {
+
+  for(var i = 0; i < 10; i++){
+
+      str += str + ' ';
+
+  }
+
+  return str;
+
+}
+
 module.exports = {
-  upper
+  upper,
+  low: lower,
+  show
 }
